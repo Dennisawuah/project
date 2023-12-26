@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>The Warnings of the Old House</title>
+</head>
+
+<body class="verhaalbody">
+    <header>
+        <header>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="options-menu" id="optionsMenu">
+                <label for="darkMode">Donker modus:</label>
+                <input type="checkbox" id="darkMode" onchange="toggleDarkMode()">
+
+                <label for="fontSize">tekstgrootte:</label>
+                <select id="fontSize" onchange="changeFontSize()">
+                    <option value="16">Klein</option>
+                    <option value="18">Medium</option>
+                    <option value="20">Groot</option>
+                </select>
+
+
+
+                <label for="hideImages">afbeeldingen verbergen:</label>
+                <input type="checkbox" id="hideImages" onchange="toggleImageVisibility()">
+
+
+            </div>
+            <a href="/index.html">
+                <img class="home" src="/afbeeldingen/blue_repicthousebase_1484336386-1.png" alt="Home">
+            </a>
+            <h1>I told you so</h1>
+        </header>
+
+        <main>
+            <section class="story" id="story">
+                <img class="fotoverhaal" src="/afbeeldingen/i told you so.jpeg" alt="foto" id="myImage">
+                <p>Once, in a quaint little town, there stood an old house at the edge of the forest. Locals spoke of it
+                    in hushed tones, claiming it was haunted and cursed. No one dared to venture near it, except for a
+                    curious teenager named Alex.</p>
+                <p>Alex's friends warned, "Stay away from that house, it's trouble!" But Alex, fueled by a sense of
+                    adventure, brushed off the warnings and decided to explore the mysterious dwelling.</p>
+                <p>The day was overcast as Alex approached the creaking front door of the ancient house. With each step,
+                    the air became heavier, and the silence more profound. Suddenly, a voice echoed through the empty
+                    halls, whispering, "I told you so."</p>
+                <p>Ignoring the eerie warning, Alex continued further into the house. The old floorboards groaned
+                    beneath every step. As Alex reached the dilapidated staircase, the voice grew louder, repeating the
+                    ominous phrase.</p>
+                <p>In the dim light of the attic, Alex discovered an old journal. As the pages turned, the warnings
+                    within the diary became clearer. It detailed the tragic tale of a family who once lived in the
+                    house, plagued by misfortune and sorrow.</p>
+                <p>Feeling a chill down the spine, Alex realized the warnings weren't a mere superstition. The house
+                    held a dark history, and the voice, now urgent, whispered once more, "I told you so."</p>
+                <p>Panicking, Alex rushed to leave the house, but the door slammed shut. Shadows danced on the walls as
+                    the voice echoed one last time. In that moment, Alex understood the consequences of ignoring the
+                    warnings.</p>
+                <p>With a burst of courage, Alex found a hidden passage leading to safety. As Alex emerged into the
+                    daylight, the old house seemed to sigh in relief. The warnings had been heeded, and the curse
+                    lifted.</p>
+                <p>From that day on, the locals respected the abandoned house, realizing that some warnings are not to
+                    be taken lightly. As for Alex, the experience served as a lesson that sometimes, the wisdom of those
+                    who came before is worth heeding.</p>
+            </section>
+        </main>
+
+        <footer class="verhaalfooter">
+            <p>&copy; 2023 GratisBookshelf</p>
+        </footer>
+        <script src="/script/script.js"></script>
+</body>
+
+</html>

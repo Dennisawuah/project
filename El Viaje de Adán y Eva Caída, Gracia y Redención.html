@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Das Spiel des Lebens</title>
+    <link rel="icon" type="image/x-icon" href="/afbeeldingen/Scherm­afbeelding 2023-12-25 om 14.47.27.png">
+
+</head>
+
+<body class="verhaalbody">
+    <header>
+        <header>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="options-menu" id="optionsMenu">
+                <label for="darkMode">Donker modus:</label>
+                <input type="checkbox" id="darkMode" onchange="toggleDarkMode()">
+
+                <label for="fontSize">tekstgrootte:</label>
+                <select id="fontSize" onchange="changeFontSize()">
+                    <option value="16">Klein</option>
+                    <option value="18">Medium</option>
+                    <option value="20">Groot</option>
+                </select>
+
+
+
+                <label for="hideImages">afbeeldingen verbergen:</label>
+                <input type="checkbox" id="hideImages" onchange="toggleImageVisibility()">
+
+
+            </div>
+            <a href="/index.html">
+                <img class="home" src="/afbeeldingen/blue_repicthousebase_1484336386-1.png" alt="Home">
+            </a>
+            <h1>El Viaje de Adán y Eva: Caída, Gracia y Redención</h1>
+        </header>
+
+        <main>
+            <section class="story" id="story">
+                <img class="fotoverhaal" src="/afbeeldingen/El Viaje de Adán y Eva: Caída, Gracia y Redención.jpg"
+                    alt="El Viaje de Adán y Eva: Caída, Gracia y Redención" id="myImage">
+                <p>En el principio, cuando la creación se extendía como un lienzo infinito, Dios formó al hombre y la
+                    mujer a su imagen y semejanza. Adán y Eva, los primeros seres humanos, caminaban por el Edén, el
+                    jardín de la perfección divina.</p>
+
+                <p>El Edén era un lugar de maravillas indescriptibles. Sus árboles daban frutos de sabores
+                    inimaginables, sus ríos fluían con aguas cristalinas y la armonía llenaba el aire. Adán y Eva vivían
+                    en comunión con la creación y su Creador, disfrutando de la paz que solo la presencia de Dios puede
+                    ofrecer.</p>
+
+                <p>Sin embargo, en medio de este paraíso, se ocultaba una prueba de la lealtad y obediencia de la
+                    humanidad. En el corazón del jardín se alzaba el Árbol del Conocimiento del Bien y del Mal. Dios
+                    había advertido a Adán y Eva que no comieran de su fruto, pues conocerían el mal y enfrentarían las
+                    consecuencias.</p>
+
+                <p>Un día, la serpiente astuta se acercó a Eva y sembró dudas en su mente. Le susurró palabras de
+                    rebelión, cuestionando la verdad de las palabras divinas. Eva, tentada por el deseo de conocer más
+                    allá de los límites establecidos, cedió a la tentación y tomó del fruto prohibido.</p>
+
+                <p>Con un solo acto, el pecado entró en el mundo. Adán, también seducido por la promesa de conocimiento,
+                    participó en la desobediencia. En ese momento, su inocencia se perdió, y la conexión perfecta con
+                    Dios se rompió. La caída había ocurrido, y la humanidad quedó atrapada en las cadenas del pecado.
+                </p>
+
+                <p>Al darse cuenta de su desnudez, Adán y Eva sintieron vergüenza y se escondieron de la presencia
+                    divina. Dios, en su justicia y misericordia, los confrontó con las consecuencias de su elección. La
+                    tierra llevaría espinas y cardos, el trabajo sería arduo y el dolor acompañaría el proceso de traer
+                    vida al mundo.</p>
+
+                <p>El Edén, una vez refugio de perfección, se cerró para siempre. Dios, en su santidad, no podía
+                    permitir que la humanidad pecadora permaneciera en su presencia sin la expiación adecuada. Pero
+                    incluso en el juicio, Dios ofreció esperanza.</p>
+
+                <p>En medio de las consecuencias, Dios pronunció una promesa de redención. Anunció que de la
+                    descendencia de la mujer nacería aquel que aplastaría la cabeza de la serpiente, un Mesías que
+                    traería salvación y restauración. Aunque la humanidad había caído, Dios ya estaba tejiendo el hilo
+                    de la gracia que los rescataría.</p>
+
+                <p>La historia de Adán y Eva es una narrativa de desobediencia y sus consecuencias, pero también es una
+                    historia de amor inquebrantable. A pesar de la rebelión, Dios no abandonó a sus hijos. Proveyó para
+                    ellos ropas de piel, simbolizando el sacrificio necesario para cubrir el pecado.</p>
+
+                <p>La vida continuó fuera del Edén, y Adán y Eva experimentaron las alegrías y tristezas de la
+                    existencia en un mundo caído. Tuvieron hijos, enfrentaron desafíos y vieron cumplirse la promesa
+                    divina a medida que la historia se desplegaba.</p>
+
+                <p>La gracia de Dios, evidente a lo largo de las generaciones, culminaría en el sacrificio supremo.
+                    Jesucristo, el descendiente prometido, llegaría para llevar el peso del pecado y reconciliar a la
+                    humanidad con Dios. La redención estaba en marcha.</p>
+
+                <p>La historia de Adán y Eva es más que un relato antiguo. Es el prólogo de la historia de la humanidad,
+                    una historia de caída, gracia y redención. A través de sus vidas, vemos la fidelidad de Dios, quien,
+                    incluso en medio de la desobediencia, traza un plan para restaurar la relación perdida.</p>
+
+                <p>En cada página de esta historia, encontramos la esperanza de un mañana redentor. Aunque Adán y Eva
+                    experimentaron las consecuencias de sus acciones, su legado nos recuerda que, en Cristo, hay perdón
+                    y restauración para todos los que buscan la gracia divina.</p>
+
+
+            </section>
+        </main>
+
+        <footer class="verhaalfooter">
+            <p>&copy; 2023 GratisBookshelf</p>
+        </footer>
+        <script src="/script/script.js"></script>
+</body>
+
+</html>

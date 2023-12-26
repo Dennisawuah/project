@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GratisBookshelf</title>
+    <link rel="icon" type="image/x-icon" href="/afbeeldingen/Scherm­afbeelding 2023-12-25 om 14.47.27.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <img class="logo" src="/afbeeldingen/Scherm­afbeelding 2023-12-25 om 14.47.27.png"
+                alt="GratisBookshelf logo">
+
+            <div class="sub">
+                <div class="menu-container">
+                    <!-- hamburger icontje -->
+                    <div class="hamburger-menu" onclick="toggleMenu()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <!--menu opties-->
+                    <div class="options-menu" id="optionsMenu">
+                        <label for="darkMode">Donker modus:</label>
+                        <input type="checkbox" id="darkMode" onchange="toggleDarkMode()">
+                    </div>
+
+                </div>
+                <div class="filter-container">
+                    <!-- Categorie filter toevoegen-->
+                    <label for="categoryFilter">Genre:</label>
+                    <select id="categoryFilter" onchange="filterBooks()">
+                        <option value="all">Alles</option>
+                        <option value="Thrillers">Thrillers</option>
+                        <option value="Psychologie">Psychologie</option>
+                        <option value="Fantasy en Science fiction">Fantasie</option>
+                        <option value="Gezondheid">Gezondheid</option>
+                        <option value="Misdaad">Misdaad</option>
+                    </select>
+
+                    <!-- Taal filter toevoegen-->
+                    <label for="languageFilter">Taal:</label>
+                    <select id="languageFilter" onchange="filterBooks()">
+                        <option value="all">Alles</option>
+                        <option value="dutch">Nederlands</option>
+                        <option value="english">Engels</option>
+                        <option value="french">frans</option>
+                        <option value="german">Duits</option>
+                        <option value="spanish">Spaans</option>
+                    </select>
+
+                    <!-- Leeftijd filter toevoegen-->
+                    <label for="ageFilter">Leeftijd:</label>
+                    <select id="ageFilter" onchange="filterBooks()">
+                        <option value="all">Alles</option>
+                        <option value="children">Kinderen</option>
+                        <option value="young-adult">Tieners</option>
+                        <option value="adult">Volwassen</option>
+                    </select>
+
+                    <!-- Reset knop -->
+                    <button class="reset" onclick="resetFilters()">Reset</button>
+                </div>
+
+
+                <!-- Modal voor het tonen van boek details -->
+                <div class="modal" id="bookDetailsModal">
+                    <div class="modal-content">
+                        <span class="close" onclick="hideBookDetailsModal()">&times;</span>
+                        <div id="modalContent"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Hier worden boeken toevoegen per klasse-->
+        <div id="ebookContent" class="ebook">
+
+
+            <a class="boek" href="verhalen/I told you so.html" data-category="Misdaad" data-language="english"
+                data-age="childeren">
+                <img class="foto" src="/afbeeldingen/i told you so.jpeg" alt="young-adult">
+
+                <div class="verhaal">I told you so</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>I told you so</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Misdaad</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+
+            <a class="boek" href="verhalen/El Viaje de Adán y Eva Caída, Gracia y Redención.html"
+                data-category="Misdaad" data-language="spanish" data-age="childeren">
+                <img class="foto" src="/afbeeldingen/El Viaje de Adán y Eva: Caída, Gracia y Redención.jpg"
+                    alt="  El Viaje de Adán y Eva: Caída, Gracia y Redención">
+
+                <div class="verhaal"> El Viaje de Adán y Eva</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2> El Viaje de Adán y Eva: Caída, Gracia y Redención</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Misdaad</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+
+            <a class="boek" href="verhalen/Das Spiel des Lebens.html" data-category="Psychologie" data-language="german"
+                data-age="adult">
+                <img class="foto" src="/afbeeldingen/Das Spiel des Lebens.jpg" alt="Das Spiel des Lebens">
+
+                <div class="verhaal">Das Spiel des Lebens</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>Das Spiel des Lebens</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Psychologie</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/The flying dutchman.html" data-category="Psychologie" data-language="dutch"
+                data-age="young-adult">
+                <img class="foto" src="/afbeeldingen/The flying Dutchman.jpg" alt="Das Spiel des Lebens">
+
+                <div class="verhaal">The flying Dutchman</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>The flying Dutchman</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Psychologie</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+
+        </div>
+        <a href="index.html"><button class="btn2">vorige</button></a>
+
+
+
+
+    </div>
+    <footer>
+        <p>&copy; 2023 GratisBookshelf.be --- <a href="overons.html">over ons</a> --- <a href="privacy.html">privacy
+                policy</a></p>
+    </footer>
+
+    <script src="/script/script.js"></script>
+</body>
+
+</html>

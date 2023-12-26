@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GratisBookshelf</title>
+    <link rel="icon" type="image/x-icon" href="/afbeeldingen/Scherm­afbeelding 2023-12-25 om 14.47.27.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <img class="logo" src="/afbeeldingen/Scherm­afbeelding 2023-12-25 om 14.47.27.png"
+                alt="GratisBookshelf logo">
+
+            <div class="sub">
+                <div class="menu-container">
+                    <!-- hamburger icontje -->
+                    <div class="hamburger-menu" onclick="toggleMenu()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <!--menu opties-->
+                    <div class="options-menu" id="optionsMenu">
+                        <label for="darkMode">Donker modus:</label>
+                        <input type="checkbox" id="darkMode" onchange="toggleDarkMode()">
+                    </div>
+
+                </div>
+                <div class="filter-container">
+                    <!-- Categorie filter toevoegen-->
+                    <label for="categoryFilter">Genre:</label>
+                    <select id="categoryFilter" onchange="filterBooks()">
+                        <option value="all">Alles</option>
+                        <option value="Thrillers">Thrillers</option>
+                        <option value="Psychologie">Psychologie</option>
+                        <option value="Fantasy en Science fiction">Fantasie</option>
+                        <option value="Gezondheid">Gezondheid</option>
+                        <option value="Misdaad">Misdaad</option>
+                    </select>
+
+                    <!-- Taal filter toevoegen-->
+                    <label for="languageFilter">Taal:</label>
+                    <select id="languageFilter" onchange="filterBooks()">
+                        <option value="all">Alles</option>
+                        <option value="dutch">Nederlands</option>
+                        <option value="english">Engels</option>
+                        <option value="french">frans</option>
+                        <option value="german">Duits</option>
+                        <option value="spanish">Spaans</option>
+                    </select>
+
+                    <!-- Leeftijd filter toevoegen-->
+                    <label for="ageFilter">Leeftijd:</label>
+                    <select id="ageFilter" onchange="filterBooks()">
+                        <option value="all">Alles</option>
+                        <option value="children">Kinderen</option>
+                        <option value="young-adult">Tieners</option>
+                        <option value="adult">Volwassen</option>
+                    </select>
+
+                    <!-- Reset knop -->
+                    <button class="reset" onclick="resetFilters()">Reset</button>
+                </div>
+
+
+                <!-- Modal voor het tonen an de boek details -->
+                <div class="modal" id="bookDetailsModal">
+                    <div class="modal-content">
+                        <span class="close" onclick="hideBookDetailsModal()">&times;</span>
+                        <div id="modalContent"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Hier worden boeken toevoegen per klasse-->
+        <div id="ebookContent" class="ebook">
+
+
+
+
+            <a class="boek" href="verhalen/Het Mysterie van de Verloren Sleutel.html" data-category="Thrillers"
+                data-language="dutch" data-age="adult">
+                <img class="foto" src="/afbeeldingen/Het Mysterie van de Verloren Sleutel.jpg"
+                    alt="Het Mysterie van de Verloren Sleutel">
+
+                <div class="verhaal">Het Mysterie van de Verloren Sleutel</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>Het Mysterie van de Verloren Sleutel</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Thrillers</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/The Enchanted Garden.html" data-category="Fantasy en Science fiction"
+                data-language="english" data-age="adult">
+                <img class="foto" src="/afbeeldingen/The Enchanted Garden.jpg" alt="The Enchanted Garden">
+
+                <div class="verhaal">The Enchanted Garden</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>The Enchanted Garden</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Fantasy en Science fiction</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/L'Énigme du Cœur Brisé.html" data-category="Psychologie"
+                data-language="french" data-age="young-adult">
+                <img class="foto" src="/afbeeldingen/L'Énigme du Cœur Brisé.jpg" alt=" L'Énigme du Cœur Brisé">
+
+                <div class="verhaal"> L'Énigme du Cœur Brisé</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2> L'Énigme du Cœur Brisé</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre:Psychologie </p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/Die Reise ins Unbekannte.html" data-category="Gezondheid"
+                data-language="german" data-age="young-adult">
+                <img class="foto" src="/afbeeldingen/Die Reise ins Unbekannte.jpg" alt="Die Reise ins Unbekannte">
+
+                <div class="verhaal">Die Reise ins Unbekannte</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>Die Reise ins Unbekannte</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Gezondheid</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/El Secreto de la Montaña.html" data-category="Fantasy en Science fiction"
+                data-language="spanish" data-age="children">
+                <img class="foto" src="/afbeeldingen/El Secreto de la Montaña.jpg" alt=" El Secreto de la Montaña">
+
+                <div class="verhaal">Fantasy en Science fiction</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>Fantasy en Science fiction</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Fiction</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/Verdacht in de Mist kopie.html" data-category="Misdaad" data-language="dutch"
+                data-age="children">
+                <img class="foto" src="/afbeeldingen/Verdacht in de Mist.jpg" alt="Verdacht in de Mist">
+
+                <div class="verhaal">Verdacht in de Mist</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>Verdacht in de Mist</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Misdaad</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/The Whispering Shadows.html" data-category="Thrillers"
+                data-language="english" data-age="adult">
+                <img class="foto" src="/afbeeldingen/The Whispering Shadows.jpg" alt="The Whispering Shadows">
+
+                <div class="verhaal">The Whispering Shadows</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>The Whispering Shadows</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Thrillers</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/Le Mystère du Temps Perdu.html" data-category="Fantasy en Science fiction"
+                data-language="french" data-age="young-adult">
+                <img class="foto" src="/afbeeldingen/Le Mystère du Temps Perdu.jpg" alt="Le Mystère du Temps Perdu">
+
+                <div class="verhaal">Le Mystère du Temps Perdu</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>Le Mystère du Temps Perdu</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre:Fantasy en Science fiction </p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/Die Dunkle Seite der Seele.html" data-category="Psychologie"
+                data-language="german" data-age=childeren">
+                <img class="foto" src="/afbeeldingen/die dunkle.jpg" alt=" Die Dunkle Seite der Seele">
+
+                <div class="verhaal"> Die Dunkle Seite der Seele</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2> Die Dunkle Seite der Seele</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Psychologie</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/El Misterio del Bosque Encantado.html" data-category="Gezondheid"
+                data-language="spanish" data-age="adult">
+                <img class="foto" src="/afbeeldingen/El Misterio del Bosque Encantado.jpg"
+                    alt="El Misterio del Bosque Encantado">
+
+                <div class="verhaal">El Misterio del Bosque Encantado</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>El Misterio del Bosque Encantado</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Gezondheid</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/El Misterio del Bosque Encantado.html" data-category="Gezondheid"
+                data-language="spanish" data-age="childeren">
+                <img class="foto" src="/afbeeldingen/El Misterio del Callejón Oscuro.jpg"
+                    alt="El Misterio del Callejón Oscuro">
+
+                <div class="verhaal">El Misterio del Callejón Oscuro</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>El Misterio del Callejón Oscuro</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Gezondheid</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+            <a class="boek" href="verhalen/Enge Geest.html" data-category="Thrillers" data-language="dutch"
+                data-age="young-adult">
+                <img class="foto" src="/afbeeldingen/Enge geest.jpg" alt="young-adult">
+
+                <div class="verhaal">Enge Geest</div>
+                <div class="info-icon" onclick="showBookDetailsModal(this, event)">ℹ️</div>
+                <div class="book-details" style="display: none;">
+                    <h2>Enge Geest</h2>
+                    <p>Author: Dennis Awuah</p>
+                    <p>Genre: Thrillers</p>
+                    <p>Published: 2023</p>
+                </div>
+            </a>
+
+
+        </div>
+
+        <a class="navbtn" href="pagina2.html"><button class="btn">volgende</button></a>
+
+
+
+
+
+    </div>
+    <footer>
+        <p>&copy; 2023 GratisBookshelf.be --- <a href="overons.html">over ons</a> --- <a href="privacy.html">privacy
+                policy</a></p>
+    </footer>
+
+    <script src="/script/script.js"></script>
+</body>
+
+</html>
